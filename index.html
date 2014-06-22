@@ -6,6 +6,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div></div>
+        <div id="tasks">
+            <form action="#" id="addTask">
+                <label for="name">Task name:</label>
+                <input type="text" id="name">
+
+                <button id="add">Add</button>
+            </form>
+        </div>
+
+        <script type="text/template" id="taskView">
+            <%= name %>
+            <button id="done">Done</button>
+        </script>
+
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+        <script src="js/models/task.js"></script>
+        <script src="js/collections/tasks.js"></script>
+        <script src="js/views/task.js"></script>
+        <script src="js/views/tasks.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
