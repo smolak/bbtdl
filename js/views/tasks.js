@@ -2,6 +2,7 @@ var app = app || {};
 
 app.TasksView = Backbone.View.extend({
     el: '#tasks',
+    $tasksList: $('#tasksList'),
     initialize: function(initialTasks) {
         this.collection = new app.Tasks(initialTasks);
         this.render();
@@ -20,7 +21,7 @@ app.TasksView = Backbone.View.extend({
             model: item
         });
 
-        this.$el.append(taskView.render().el);
+        this.$tasksList.append(taskView.render().el);
         this.clearForm();
     },
     events: {
