@@ -32,7 +32,7 @@ app.TasksView = Backbone.View.extend({
 
         var formData = {};
 
-        $('#addTask').children('input').each(function(i, el) {
+        $('#addTask').find('input').each(function(i, el) {
             formData[el.id] = $(el).val();
         });
 
