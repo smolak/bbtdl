@@ -2,6 +2,7 @@ var app = app || {};
 
 app.TaskView = Backbone.View.extend({
     tagName: 'li',
+    className: 'list-group-item',
     template: _.template($('#taskView').html()),
     initialize: function() {
         this.render();

@@ -5,20 +5,31 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
+                    <header class="main">
+                        <h1 class="title pull-left">To do list in Backbone.js</h1>
+                        <h2 class="author pull-left">by <a href="https://github.com/smolak">Jacek Smolak</a>, source available on <a href="https://github.com/smolak/bbtdl" title="Source code">GitHub</a></h2>
+                    </header>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
                     <div id="tasks">
-                        <form action="#" id="addTask">
-                            <label for="name">Task name:</label>
-                            <input type="text" id="name">
+                        <form action="#" id="addTask" class="form">
+                            <div class="form-group">
+                                <label for="name">I need to:</label>
+                                <input type="text" id="name" class="form-control">
+                            </div>
 
-                            <span class="btn btn-default glyphicon glyphicon-plus" id="add"></span>
+                            <button id="add" class="sr-only"></button>
                         </form>
-                        <ul id="tasksList">
+                        <ul id="tasksList" class="list-group">
                         </ul>
                     </div>
                 </div>
