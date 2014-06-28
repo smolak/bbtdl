@@ -6,6 +6,7 @@ app.TasksView = Backbone.View.extend({
     $name: $('#name'),
     initialize: function(initialTasks) {
         this.collection = new app.Tasks(initialTasks);
+        this.focusForm();
         this.render();
         this.listenTo(this.collection, 'add', this.renderTask);
         this.listenTo(this.collection, 'add', this.saveCollection);
