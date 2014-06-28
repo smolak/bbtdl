@@ -12,11 +12,20 @@ app.TaskView = Backbone.View.extend({
 
         return this;
     },
-    events: {
-        'click #done': 'taskDone'
+    focusForm: function() {
+        $('#name').focus();
     },
-    taskDone: function() {
+    events: {
+        'click #remove': 'taskRemove',
+        'click .task-name': 'taskDone'
+    },
+    taskRemove: function() {
         this.model.destroy();
         this.remove();
+        this.focusForm();
+    },
+    taskDone: function() {
+        this.$el.toggleClass('success');
+        this.focusForm();
     }
 });
