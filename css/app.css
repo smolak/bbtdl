@@ -27,12 +27,7 @@ header.main .author {
     background: #f9f9f9;
 }
 
-.list-group-item.success,
-.list-group-item.success:hover {
-    background: #f2fff4;
-}
-
-.list-group-item.success .task-name:before {
+.list-group-item .task-name:before {
     content: '\e013';
     display: inline-block;
     font-family: 'Glyphicons Halflings';
@@ -47,7 +42,12 @@ header.main .author {
     font-size: 20px;
     font-weight: 500;
     color: green;
+    color: #eee;
     margin: 1px 0 0 -28px;
+}
+
+.list-group-item .task-name.success:before {
+    color: green;
 }
 
 .list-group-item .task-name {
@@ -60,4 +60,5 @@ header.main .author {
 .list-group-item .label {
     float: right;
     margin: 13px 0 0 10px;
+    cursor: pointer;
 }
