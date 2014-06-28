@@ -26,6 +26,7 @@ app.TaskView = Backbone.View.extend({
     },
     taskDone: function() {
         this.$el.toggleClass('success');
+        this.model.set('done', !this.model.get('done'));
         this.focusForm();
     }
 });

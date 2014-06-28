@@ -2,7 +2,8 @@ var app = app || {};
 
 app.Task = Backbone.Model.extend({
     defaults: {
-        name: ''
+        name: '',
+        done: false
     },
     validate: function(attrs, options) {
         attrs.name = attrs.name.trim();
