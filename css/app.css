@@ -17,3 +17,47 @@ header.main .author {
     padding: 15px 10px;
     line-height: 1em;
 }
+
+.list-group-item {
+    padding: 0 20px 0 30px;
+    font-size: 16px;
+}
+
+.list-group-item:hover {
+    background: #f9f9f9;
+}
+
+.list-group-item.success,
+.list-group-item.success:hover {
+    background: #f2fff4;
+}
+
+.list-group-item.success .task-name:before {
+    content: '\e013';
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    position: absolute;
+    font-size: 20px;
+    font-weight: 500;
+    color: green;
+    margin: 1px 0 0 -28px;
+}
+
+.list-group-item .task-name {
+    padding: 10px;
+    display: block;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.list-group-item .label {
+    float: right;
+    margin: 13px 0 0 10px;
+}
