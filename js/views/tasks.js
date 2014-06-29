@@ -31,7 +31,9 @@ app.TasksView = Backbone.View.extend({
         return this;
     },
     focusForm: function() {
-        this.$name.focus();
+        //You don't want to focus when on mobile device
+        //It will trigger keyboard.
+        $.browser.mobile ? null : this.$name.focus();
 
         return this;
     },
