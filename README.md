@@ -1,8 +1,7 @@
 To do list in Backbone.js
 =========================
 
-This is my first project written in Backbone.
-I'll add some visuals (done), storage (done) and import / export in near future.
+Working on modular form of this app using require.js.
 
 License
 -------
