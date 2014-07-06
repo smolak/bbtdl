@@ -1,5 +1,12 @@
-var app = app || {};
+define([
+    'backbone',
+    'models/task'
+], function(Backbone, taskModel) {
 
-app.Tasks = Backbone.Collection.extend({
-    model: app.Task
+    var taskCollection = Backbone.Collection.extend({
+        model: taskModel
+    });
+
+    return taskCollection;
+
 });

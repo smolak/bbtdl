@@ -1,8 +1,12 @@
-$.cookie.json = true;
-$.cookie.defaults.expires = 30;
+define([
+    'router' // Request router.js
+], function(Router) {
+    var initialize = function() {
+        // Pass in our Router module and call it's initialize function
+        Router.initialize();
+    };
 
-var tasks = $.cookie('bbtdl');
-
-tasks = tasks || [];
-
-new app.TasksView(tasks);
+    return {
+        initialize: initialize
+    };
+});
