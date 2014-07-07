@@ -11,13 +11,17 @@ define([
         $name: $('#name'),
         initialize: function() {
             this.collection = new tasksCollection;
+            this.collection.fetch();
+
             //this.focusForm();
             this.render();
             this.listenTo(this.collection, 'add', this.renderTask);
         },
         render: function() {
+            var that = this;
+
             this.collection.each(function(item) {
-                this.renderTask(item);
+                that.renderTask(item);
             });
         },
         renderTask: function(item) {
@@ -32,8 +36,6 @@ define([
             'click #add': 'addTask'
         },
         addTask: function(e) {
-            console.log('adding taks');
-
             e.preventDefault();
 
             var formData = {};
@@ -49,6 +51,7 @@ define([
             }
             else {
                 this.collection.add(model);
+                model.save();
             }
         }
     });

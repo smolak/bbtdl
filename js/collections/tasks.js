@@ -1,10 +1,12 @@
 define([
     'backbone',
+    'localstorage',
     'models/task'
-], function(Backbone, taskModel) {
+], function(Backbone, LocalStorage, taskModel) {
 
     var taskCollection = Backbone.Collection.extend({
-        model: taskModel
+        model: taskModel,
+        localStorage: new LocalStorage('bbtdl-collection')
     });
 
     return taskCollection;

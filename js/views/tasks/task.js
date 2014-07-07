@@ -32,6 +32,7 @@ define([
         taskDone: function() {
             this.$el.find('.task-name').toggleClass('success');
             this.model.set('done', !this.model.get('done'));
+            this.model.save();
         }
    });
 
