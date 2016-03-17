@@ -11,3 +11,5 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
+### JetBrains ###
+.idea/
