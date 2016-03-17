@@ -20,8 +20,10 @@ app.TaskView = Backbone.View.extend({
         this.model.destroy();
         this.remove();
     },
-    taskDone: function() {
-        this.$el.find('.task-name').toggleClass('success');
-        this.model.set('done', !this.model.get('done'));
+    taskDone: function(event) {
+        if (event.target.tagName != 'A') {
+            this.$el.find('.task-name').toggleClass('success');
+            this.model.set('done', !this.model.get('done'));
+        }
     }
 });

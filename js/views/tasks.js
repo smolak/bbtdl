@@ -73,8 +73,8 @@ app.TasksView = Backbone.View.extend({
         var formData = {};
 
         $('#addTask').find('input').each(function(i, el) {
-            formData[el.id] = $(el).val();
-        });
+            formData[el.id] = this.urlify($(el).val());
+        }.bind(this));
 
         var task = new app.Task(formData);
 
@@ -87,5 +87,11 @@ app.TasksView = Backbone.View.extend({
     },
     saveCollection: function() {
         $.cookie('bbtdl', this.collection.toJSON());
+    },
+    urlify: function(text) {
+        var urlRegex = /(https?:\/\/[^\s]+)/g;
+        return text.replace(urlRegex, function(url) {
+            return '<a href="' + url + '" target="_blank">' + url + '</a>';
+        })
     }
 });
