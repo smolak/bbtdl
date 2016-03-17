@@ -17,7 +17,22 @@ app.TasksView = Backbone.View.extend({
         this.listenTo(this.collection, 'change', this.focusForm);
     },
     applySortable: function () {
-        Sortable.create(this.$tasksList[0]);
+        Sortable.create(this.$tasksList[0], {
+            onEnd: function () {
+                var newModels = [];
+
+                this.$el.find('.task-name').each(function() {
+                    newModels.push(new app.Task({
+                        name: $(this).text(),
+                        done: $(this).hasClass('success')
+                    }));
+                });
+
+                this.collection.reset(newModels);
+
+                this.saveCollection();
+            }.bind(this)
+        });
     },
     render: function() {
         this.collection.each(function(item) {
