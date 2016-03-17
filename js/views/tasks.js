@@ -8,12 +8,16 @@ app.TasksView = Backbone.View.extend({
         this.collection = new app.Tasks(initialTasks);
         this.focusForm();
         this.render();
+        this.applySortable();
         this.listenTo(this.collection, 'add', this.renderTask);
         this.listenTo(this.collection, 'add', this.saveCollection);
         this.listenTo(this.collection, 'destroy', this.saveCollection);
         this.listenTo(this.collection, 'destroy', this.focusForm);
         this.listenTo(this.collection, 'change', this.saveCollection);
         this.listenTo(this.collection, 'change', this.focusForm);
+    },
+    applySortable: function () {
+        Sortable.create(this.$tasksList[0]);
     },
     render: function() {
         this.collection.each(function(item) {
