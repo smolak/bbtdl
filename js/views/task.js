@@ -13,7 +13,7 @@ app.TaskView = Backbone.View.extend({
         return this;
     },
     events: {
-        'click #remove': 'taskRemove',
+        'click .remove': 'taskRemove',
         'click .task-name': 'taskDone'
     },
     taskRemove: function() {
